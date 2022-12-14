@@ -1,0 +1,56 @@
+body {
+    font-family: 'Lato', 'sans-serif', 'arial', 'helvetica';
+}
+
+.ms-container {
+    margin: 0 auto;
+    width: 1440px;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.ms-top {
+    background-image: url("img/ms-top-bg.jpeg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 715px;
+
+}
+
+.ms-top .ms-top__header {
+    color: white;
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+/* Media Queries */
+
+/*Common Breakpoints Standard Resolutions: */
+/*320px — 480px: Mobile devices.*/
+/*481px — 768px: iPads, Tablets.*/
+/*769px — 1024px: Small screens, laptops.*/
+/*1025px — 1200px: Desktops, large screens.*/
+/*1201px and more — Extra large screens, TV.*/
+
+@media (max-width: 1200px) {
+    .ms-container {
+        width: 1025px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ms-container {
+        width: 481px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ms-container {
+        width: 320px;
+    }
+}
+
+
