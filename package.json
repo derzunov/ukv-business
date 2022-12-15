@@ -1,0 +1,25 @@
+{
+  "name": "ukv-business",
+  "version": "1.0.0",
+  "homepage": "https://derzunov.github.io/ukv-business/",
+  "description": "Страницы для сайта компании ukv-business.ru",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d medical-services"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derzunov/ukv-business.git"
+  },
+  "author": "derzunov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/derzunov/ukv-business/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}

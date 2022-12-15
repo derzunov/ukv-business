@@ -1,10 +1,19 @@
+/* Lato, как на сайте компании (не умеет менять вес на русском): */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Inter, как на макете из figma */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+html {}
+
 body {
-    font-family: 'Lato', 'sans-serif', 'arial', 'helvetica';
+    font-family: 'Inter', 'arial', 'helvetica', 'sans-serif';
+    font-weight: 300;
+    width: 100%;
 }
 
 .ms-container {
+    width: 100%;
     margin: 0 auto;
-    width: 1440px;
     box-sizing: border-box;
     padding: 0;
 }
@@ -14,21 +23,178 @@ body {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 715px;
-
+    height: fit-content;
+    padding: 117px 0 110px 0;
+    color: #ffffff;
+    box-sizing: border-box;
 }
 
-.ms-top .ms-top__header {
+.ms-top__header {
     color: white;
     font-size: 48px;
-    font-weight: 900;
+    font-weight: bold;
     text-transform: uppercase;
+    margin: 0 0 117px 103px;
+
+}
+.ms-top-features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 0 0 103px;
+    width: 75%;
 }
 
 
-/* Media Queries */
+.ms-top-feature {
+    width: fit-content;
+}
+
+.ms-top-feature__header {
+    font-size: 24px;
+    line-height: 29px;
+    font-style: normal;
+    padding: 25px 0 50px 0;
+}
+
+.ms-top-feature__description {
+    font-size: 24px;
+}
+
+.ms-help-prologue {}
+.ms-help-prologue__text {
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    padding: 54px 104px 104px 104px;
+}
+.ms-kind-of-help {}
+.ms-kind-of-help__header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+
+    padding: 11px 0 45px 0;
+}
+
+.ms-kind-of-help__columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.ms-kind-of-help__column {
+    width: 45%;
+    padding-left: 65px;
+    box-sizing: border-box;
+}
+
+/*универсальный лист для этой страницы*/
+.ms-list {}
+.ms-list li {
+    position: relative;
+    margin-left: 24px;
+    font-size: 24px;
+    padding-bottom: 16px;
+}
+.ms-list li:before {
+    content: "■";
+    color: #3C82D3;
+    display: inline-block;
+    position: absolute;
+    font-size: 30px;
+    left: -40px;
+    top: -9px;
+}
+
+.ms-licensing {
+    margin-top: 100px;
+}
+
+.ms-licensing-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ms-licensing-button {
+    width: 49%;
+    color: #9B9B9B;
+    background-color: transparent;
+
+    border: 2px solid #9B9B9B;
+    /* Decrease paddings by 2px because of border */
+    padding: 36px 62px 36px 80px;
+    box-sizing: border-box;
+    height: fit-content;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+.ms-licensing-button_active {
+    color: #ffffff;
+    background-color: #0459A8;
+    border: none;
+    /* Decrease paddings by 2px because of "border:none" */
+    padding: 38px 64px 38px 82px;
+
+    cursor: default;
+}
+.ms-licensing-button__description {
+}
+
+.ms-licensing-info {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 71px;
+}
+
+.ms-licensing-info__image {
+    width: 40%;
+    height: 52vw; /*40% * 1.3 (1.3 соотношение сторон картинки с макета)*/
+
+    background-position: center;
+    background-size: cover;
+}
+
+#ms-licensing-info-1 .ms-licensing-info__image {
+    background-image: url("img/ms-licensing-1.jpeg");
+}
+
+#ms-licensing-info-2 .ms-licensing-info__image {
+    background-image: url("img/ms-licensing-2.jpeg");
+}
+.ms-licensing-info__description {
+    max-width: 50%;
+    margin-left: 5%;
+}
+
+.ms-licensing-info__description-text {
+    font-size: 28px;
+}
+
+.ms-licensing-info__description-header {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 50px 0 37px 0;
+}
+
+.ms-licensing-info__description-list {
+    padding-left: 34px;
+}
+
+.ms-g-hidden {
+ display: none;
+}
+
+/* Media Queries: */
 
 /*Common Breakpoints Standard Resolutions: */
+
 /*320px — 480px: Mobile devices.*/
 /*481px — 768px: iPads, Tablets.*/
 /*769px — 1024px: Small screens, laptops.*/
@@ -36,21 +202,19 @@ body {
 /*1201px and more — Extra large screens, TV.*/
 
 @media (max-width: 1200px) {
-    .ms-container {
-        width: 1025px;
-    }
+    /*TODO: todo*/
+}
+
+@media (max-width: 1024px) {
+    /*TODO: todo*/
 }
 
 @media (max-width: 768px) {
-    .ms-container {
-        width: 481px;
-    }
+    /*TODO: todo*/
 }
 
 @media (max-width: 480px) {
-    .ms-container {
-        width: 320px;
-    }
+    /*TODO: todo*/
 }
 
 
