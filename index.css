@@ -117,9 +117,10 @@ body {
     width: 49%;
     color: #9B9B9B;
     background-color: transparent;
-    border: 2px solid #9B9B9B;
 
-    padding: 38px 64px 38px 82px;
+    border: 2px solid #9B9B9B;
+    /* Decrease paddings by 2px because of border */
+    padding: 36px 62px 36px 80px;
     box-sizing: border-box;
     height: fit-content;
 
@@ -131,6 +132,8 @@ body {
     color: #ffffff;
     background-color: #0459A8;
     border: none;
+    /* Decrease paddings by 2px because of "border:none" */
+    padding: 38px 64px 38px 82px;
 
     cursor: default;
 }
