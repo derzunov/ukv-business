@@ -22,13 +22,9 @@ body {
     background-size: cover;
     width: 100%;
     height: fit-content;
-    padding: 0 0 110px 0;
+    padding: 117px 0 110px 0;
     color: #ffffff;
     box-sizing: border-box;
-}
-
-.ms-top__info-container {
-    width: 75%;
 }
 
 .ms-top__header {
@@ -36,8 +32,8 @@ body {
     font-size: 48px;
     font-weight: 900;
     text-transform: uppercase;
-    padding: 117px 472px 317px 103px;
-    height: 281px;
+    margin: 0 0 117px 103px;
+
 }
 .ms-top-features {
     display: flex;
@@ -45,7 +41,7 @@ body {
     flex-wrap: wrap;
     box-sizing: border-box;
     padding: 0 0 0 103px;
-    width: 100%;
+    width: 75%;
 }
 
 
