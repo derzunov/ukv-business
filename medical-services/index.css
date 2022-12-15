@@ -208,38 +208,64 @@ body {
 .ms-documents {}
 
 /*блок-строка для одного типа набора документов*/
-.ms-documents-type {
+.ms-documents-group {
     border: 1px solid #000;
     margin: 18px 0;
 }
-.ms-documents-type__header {
+.ms-documents-group__header {
     display: flex;
     justify-content: space-between;
-
     align-items: center;
 
     padding: 17px 36px;
 }
-.ms-documents-type__title {
-    width: 65%;
+.ms-documents-group__title {
+    width: 60%;
     font-weight: bold;
 }
-.ms-documents-type__price {
+.ms-documents-group__show {
+    width: 13%;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ms-documents-group__price {
     font-weight: bold;
 }
+.ms-documents-group_opened .ms-documents-group__show {
+    display: none;
+}
+.ms-documents-group__hide {
+    cursor: pointer;
+    width: 13%;
+
+    display: none;
+}
+.ms-documents-group_opened .ms-documents-group__hide {
+    display: block;
+}
+.ms-documents-group_opened .ms-documents-group__icon {
+    transform: rotate(180deg);
+}
+
 /* список конкретных документов для типа */
-.ms-document-type__documents-container {
+.ms-document-group__documents-container {
     padding: 32px 82px 50px 82px;
+    display: none;
 }
-.ms-document-type__document {
-    display: flex;
+.ms-documents-group_opened .ms-document-group__documents-container {
+    display: block;
+}
+.ms-document-group__document {
     justify-content: space-between;
     align-items: flex-start;
 
     height: 54px;
+
+    display: flex;
 }
 
-.ms-document-type__document-title {
+.ms-document-group__document-title {
     width: 80%;
 }
 
