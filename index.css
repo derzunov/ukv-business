@@ -187,9 +187,14 @@ body {
     padding-left: 34px;
 }
 
-/* Media Queries */
+.ms-g-hidden {
+ display: none;
+}
+
+/* Media Queries: */
 
 /*Common Breakpoints Standard Resolutions: */
+
 /*320px — 480px: Mobile devices.*/
 /*481px — 768px: iPads, Tablets.*/
 /*769px — 1024px: Small screens, laptops.*/
@@ -197,36 +202,19 @@ body {
 /*1201px and more — Extra large screens, TV.*/
 
 @media (max-width: 1200px) {
-    /*.ms-container {*/
-    /*    width: 1025px;*/
+    /*TODO: todo*/
+}
 
-    /*    margin: 0 auto;*/
-    /*    box-sizing: border-box;*/
-    /*    padding: 0;*/
-    /*}*/
+@media (max-width: 1024px) {
+    /*TODO: todo*/
 }
 
 @media (max-width: 768px) {
-    /*.ms-container {*/
-    /*    width: 481px;*/
-
-    /*    margin: 0 auto;*/
-    /*    box-sizing: border-box;*/
-    /*    padding: 0;*/
-    /*}*/
+    /*TODO: todo*/
 }
 
 @media (max-width: 480px) {
-    /*.ms-container {*/
-    /*    width: 320px;*/
-
-    /*    margin: 0 auto;*/
-    /*    box-sizing: border-box;*/
-    /*    padding: 0;*/
-    /*}*/
+    /*TODO: todo*/
 }
-
-
-@media (min-width: 1680px) {}
 
 
