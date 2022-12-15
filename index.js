@@ -12,6 +12,7 @@ const licensingCommonBlock = document.getElementById("ms-licensing");
 
 // Class constants
 const ACTIVE_LICENSING_BUTTON_CLASS = "ms-licensing-button_active"
+const DOCUMENTS_GROUP_OPENED_CLASS = "ms-documents-group_opened"
 const HIDDEN_CLASS = "ms-g-hidden"
 
 // Functions
@@ -58,7 +59,7 @@ licensingButton_2.addEventListener("click", () => {
 // Documents ( from external source ) ----------------------------------------------------------------------------------
 
 const getGroupTemplate = ( title, price, documents ) => {
-    return `<div class="ms-documents-group ms-documents-group_opened">
+    return `<div class="ms-documents-group">
         <!-- Шапка группы документов -->
         <div class="ms-documents-group__header">
           <p class="ms-documents-group__title">${title}</p>
@@ -120,11 +121,11 @@ getDocumentsData( "documents.json" ).then( ( documents ) => {
         const showButton = groupElement.getElementsByClassName("ms-documents-group__show")[0];
 
         hideButton.addEventListener( "click", () => {
-            groupElement.classList.remove("ms-documents-group_opened");
+            groupElement.classList.remove( DOCUMENTS_GROUP_OPENED_CLASS );
         } );
 
         showButton.addEventListener( "click", () => {
-            groupElement.classList.add("ms-documents-group_opened");
+            groupElement.classList.add( DOCUMENTS_GROUP_OPENED_CLASS );
         } );
     } );
 } );
