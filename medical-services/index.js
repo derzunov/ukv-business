@@ -9,6 +9,7 @@ const documentsGroupsContainer = document.getElementById("ms-documents");
 
 // Block for scroll into view (Licensing)
 const licensingCommonBlock = document.getElementById("ms-licensing");
+const documentsBlock = document.getElementById("ms-documentation");
 
 // Class constants
 const ACTIVE_LICENSING_BUTTON_CLASS = "ms-licensing-button_active"
@@ -37,12 +38,21 @@ const showPostLicensing = () => {
 
 // Code :)
 // Check up hash for external links
-if(window.location.hash && window.location.hash === "#prelicensing") {
-    showPreLicensing();
-    licensingCommonBlock.scrollIntoView();
-} else if ( window.location.hash && window.location.hash === "#postlicensing") {
-    showPostLicensing();
-    licensingCommonBlock.scrollIntoView();
+
+if( window.location.hash ) {
+    switch ( window.location.hash ) {
+        case "#prelicensing":
+            showPreLicensing();
+            licensingCommonBlock.scrollIntoView();
+            break;
+        case "#postlicensing":
+            showPostLicensing();
+            licensingCommonBlock.scrollIntoView();
+            break;
+        case "#documents":
+            documentsBlock.scrollIntoView();
+            break;
+    }
 }
 
 // Buttons listeners
