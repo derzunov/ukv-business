@@ -204,7 +204,30 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 }
-/* Контейнер для всех блоков типов документов документы */
+
+.ms-documentation-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 70px 0;
+}
+
+.ms-documentation-info__title {
+    width: 27%;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ms-documentation-info__description {
+    width: 67%;
+    padding-right: 80px;
+
+    font-size: 24px;
+}
+
+/* Контейнер для всех блоков пакетов (групп) документов документы */
 .ms-documents {}
 
 /*блок-строка для одного типа набора документов*/
