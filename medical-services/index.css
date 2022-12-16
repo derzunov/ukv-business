@@ -204,7 +204,30 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 }
-/* Контейнер для всех блоков типов документов документы */
+
+.ms-documentation-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 70px 0;
+}
+
+.ms-documentation-info__title {
+    width: 27%;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ms-documentation-info__description {
+    width: 67%;
+    padding-right: 80px;
+
+    font-size: 24px;
+}
+
+/* Контейнер для всех блоков пакетов (групп) документов документы */
 .ms-documents {}
 
 /*блок-строка для одного типа набора документов*/
@@ -227,6 +250,7 @@ body {
     width: 13%;
     cursor: pointer;
     text-decoration: underline;
+    text-align: center;
 }
 
 .ms-documents-group__price {
@@ -238,6 +262,7 @@ body {
 .ms-documents-group__hide {
     cursor: pointer;
     width: 13%;
+    text-align: center;
 
     display: none;
 }
@@ -246,7 +271,7 @@ body {
 }
 
 .ms-documents-group__icon {
-    transition: transform ease-in .2s;
+    transition: transform ease-in .3s;
 }
 .ms-documents-group_opened .ms-documents-group__icon {
     transform: rotate(180deg);
@@ -271,6 +296,10 @@ body {
 
 .ms-document-group__document-title {
     width: 80%;
+}
+
+.ms-document-group__document-price {
+    width: 6%;
 }
 
 .ms-g-hidden {
