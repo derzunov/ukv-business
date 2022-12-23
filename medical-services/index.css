@@ -525,6 +525,10 @@ body {
         margin: 0 0 20px 0;
     }
 
+    .ms-licensing-button.ms-licensing-button_active {
+        border: solid 2px #0459A8;
+    }
+
 }
 
 @media (max-width: 640px) {
