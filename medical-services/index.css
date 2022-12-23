@@ -314,7 +314,7 @@ body {
 }
 
 .ms-document-group__document-price {
-    width: 7%;
+    width: 8%;
 }
 
 .ms-feedback {
@@ -323,7 +323,7 @@ body {
 
 .ms-feedback_licensing {
     width: 100%;
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
 }
 
 .ms-g-hidden {
@@ -362,6 +362,27 @@ body {
     }
 
     .ms-documents-group__price {
+        font-size: 14px;
+    }
+
+    .ms-document-group__document-price {
+        width: 10%;
+    }
+}
+
+@media (max-width: 900px) {
+    .ms-documentation-info {
+        display: block;
+        margin: 20px 0;
+    }
+    .ms-documentation-info__title {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
+    .ms-documentation-info__description {
+        padding: 20px 0;
+        width: 100%;
         font-size: 14px;
     }
 }
@@ -407,9 +428,6 @@ body {
     .ms-top-feature__header br {
         display: none;
     }
-    /*.ms-top-feature__header br {*/
-    /*    content: " ";*/
-    /*}*/
     .ms-top-feature__description {
         padding: 0;
         font-size: 14px;
@@ -498,6 +516,12 @@ body {
         width: 100%;
         font-size: 14px;
     }
+
+    .ms-feedback_licensing {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
 }
 
 @media (max-width: 640px) {
