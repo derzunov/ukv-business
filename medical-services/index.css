@@ -24,7 +24,7 @@ body {
     background-size: cover;
     width: 100%;
     height: fit-content;
-    padding: 117px 0 110px 0;
+    padding: 20px 0 20px 0;
     color: #ffffff;
     box-sizing: border-box;
 }
@@ -67,7 +67,7 @@ body {
     font-size: 28px;
     line-height: 34px;
     text-align: center;
-    padding: 54px 104px 104px 104px;
+    padding: 50px 100px;
 }
 .ms-kind-of-help {}
 .ms-kind-of-help__header {
@@ -327,9 +327,12 @@ body {
 }
 
 .ms-g-hidden {
- display: none;
+    display: none;
 }
 
+.ms-links {
+    padding-bottom: 40px;
+}
 
 /* Media Queries: */
 
