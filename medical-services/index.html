@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Юридическое сопровождение медицинской деятельности</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
 <div class="ms-container">
-
   <article class="ms-top">
-    <h1 class="ms-top__header">Юридическое<br>сопровождение<br>медицинской деятельности</h1>
+    <h2 class="ms-top__header">Юридическое<br>сопровождение<br>медицинской деятельности</h2>
     <div class="ms-top-features">
       <div class="ms-top-feature">
         <div class="ms-top-feature__logo">
@@ -23,12 +23,14 @@
                 stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3 class="ms-top-feature__header">
-          Стоимость пакета<br>документов
-        </h3>
-        <p class="ms-top-feature__description">
-          от 10000 рублей
-        </p>
+        <div class="ms-top-feature__info">
+          <h3 class="ms-top-feature__header">
+            Стоимость пакета <br>документов
+          </h3>
+          <p class="ms-top-feature__description">
+            от 10000 рублей
+          </p>
+        </div>
       </div>
       <div class="ms-top-feature">
         <div class="ms-top-feature__logo">
@@ -38,12 +40,14 @@
                 fill="white"/>
           </svg>
         </div>
-        <h3 class="ms-top-feature__header">
-          Сроки разработки<br>документации
-        </h3>
-        <p class="ms-top-feature__description">
-          от 4 рабочих дней
-        </p>
+        <div class="ms-top-feature__info">
+          <h3 class="ms-top-feature__header">
+            Сроки разработки <br>документации
+          </h3>
+          <p class="ms-top-feature__description">
+            от 4 рабочих дней
+          </p>
+        </div>
       </div>
       <div class="ms-top-feature">
         <div class="ms-top-feature__logo">
@@ -53,16 +57,31 @@
                 fill="white" stroke="black" stroke-width="0.5"/>
           </svg>
         </div>
-        <h3 class="ms-top-feature__header">
-          Юридические<br>консультации
-        </h3>
-        <p class="ms-top-feature__description">
-          от 3 часов
-        </p>
+        <div class="ms-top-feature__info">
+          <h3 class="ms-top-feature__header">
+            Юридические <br>консультации
+          </h3>
+          <p class="ms-top-feature__description">
+            от 3 часов
+          </p>
+        </div>
       </div>
     </div>
   </article>
 
+  </article>
+
+  <article class="ms-feedback">
+    <script data-b24-form="inline/78/uem7cb" data-skip-moving="true">
+        (function (w, d, u) {
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = u + '?' + (Date.now() / 180000 | 0);
+            var h = d.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn-ru.bitrix24.ru/b13415736/crm/form/loader_78.js');
+    </script>
+  </article>
   <article class="ms-help-prologue">
     <p class="ms-help-prologue__text">
       Решили получить медицинскую лицензию? Столкнулись с трудностями при ведении бизнеса? Проходите проверку Минздрава?
@@ -139,6 +158,17 @@
           </ul>
         </div>
       </div>
+      <div class="ms-feedback_licensing">
+        <script data-b24-form="inline/78/uem7cb" data-skip-moving="true">
+            (function (w, d, u) {
+                var s = d.createElement('script');
+                s.async = true;
+                s.src = u + '?' + (Date.now() / 180000 | 0);
+                var h = d.getElementsByTagName('script')[0];
+                h.parentNode.insertBefore(s, h);
+            })(window, document, 'https://cdn-ru.bitrix24.ru/b13415736/crm/form/loader_78.js');
+        </script>
+      </div>
     </div>
   </article>
   <article class="ms-documentation" id="ms-documentation">
@@ -156,69 +186,81 @@
     <!-- Контейнер пакетов документов -->
     <div class="ms-documents" id="ms-documents">
 
-      <!-- Одна конкретная группа документов -->
-      <div class="ms-documents-group">
-
-        <div class="ms-documents-group__header">
-          <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>
-          <p class="ms-documents-group__price">25 000</p>
-          <p class="ms-documents-group__control">скрыть</p>
-          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>
-            <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          </div>
-        </div>
-
-        <!-- Список документов для этой группы -->
-        <div class="ms-document-group__documents-container">
-
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>
-            <p class="ms-document-group__document-price">15 000</p>
-          </div>
-
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>
-            <p class="ms-document-group__document-price">3 000</p>
-          </div>
-
-        </div>
+      <div class="svg-loader">
+        <svg class="svg-container" height="70" width="70" viewBox="0 0 100 100">
+          <circle class="loader-svg bg" cx="50" cy="50" r="45"></circle>
+          <circle class="loader-svg loader-animate" cx="50" cy="50" r="45"></circle>
+        </svg>
       </div>
 
-      <!-- Один конкретный тип документов -->
-      <div class="ms-documents-group">
+<!--      &lt;!&ndash; Одна конкретная группа документов &ndash;&gt;-->
+<!--      <div class="ms-documents-group">-->
 
-        <div class="ms-documents-group__header">
-          <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>
-          <p class="ms-documents-group__price">25 000</p>
-          <p class="ms-documents-group__control">скрыть</p>
-          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>
-            <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          </div>
-        </div>
+<!--        <div class="ms-documents-group__header">-->
 
-        <!-- Список документов для этого типа -->
-        <div class="ms-document-group__documents-container">
+<!--          <div class="ms-documents-group__title-price">-->
+<!--            <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>-->
+<!--            <p class="ms-documents-group__price">25 000</p>-->
+<!--          </div>-->
 
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>
-            <p class="ms-document-group__document-price">15 000</p>
-          </div>
+<!--          <p class="ms-documents-group__control">скрыть</p>-->
+<!--          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>-->
+<!--            <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>-->
+<!--          </svg>-->
+<!--          </div>-->
+<!--        </div>-->
 
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>
-            <p class="ms-document-group__document-price">3 000</p>
-          </div>
+<!--        &lt;!&ndash; Список документов для этой группы &ndash;&gt;-->
+<!--        <div class="ms-document-group__documents-container">-->
 
-        </div>
-      </div>
+<!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+<!--          <div class="ms-document-group__document">-->
+<!--            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>-->
+<!--            <p class="ms-document-group__document-price">15 000</p>-->
+<!--          </div>-->
+
+<!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+<!--          <div class="ms-document-group__document">-->
+<!--            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>-->
+<!--            <p class="ms-document-group__document-price">3 000</p>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Один конкретный тип документов &ndash;&gt;-->
+<!--      <div class="ms-documents-group">-->
+
+<!--        <div class="ms-documents-group__header">-->
+<!--          <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>-->
+<!--          <p class="ms-documents-group__price">25 000</p>-->
+<!--          <p class="ms-documents-group__control">скрыть</p>-->
+<!--          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>-->
+<!--              <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--          <div class="ms-documents-group__header-underline"></div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Список документов для этого типа &ndash;&gt;-->
+<!--        <div class="ms-document-group__documents-container">-->
+
+<!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+<!--          <div class="ms-document-group__document">-->
+<!--            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>-->
+<!--            <p class="ms-document-group__document-price">15 000</p>-->
+<!--          </div>-->
+
+<!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+<!--          <div class="ms-document-group__document">-->
+<!--            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>-->
+<!--            <p class="ms-document-group__document-price">3 000</p>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
 
     </div>
   </article>

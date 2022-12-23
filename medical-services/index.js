@@ -1,3 +1,5 @@
+console.log("ms-service");
+
 // Elements
 const licensingButton_1 = document.getElementById("ms-licensing-button-1");
 const licensingButton_2 = document.getElementById("ms-licensing-button-2");
@@ -72,8 +74,10 @@ const getGroupTemplate = ( title, price, documents ) => {
     return `<div class="ms-documents-group">
         <!-- Шапка группы документов -->
         <div class="ms-documents-group__header">
-          <p class="ms-documents-group__title">${title}</p>
-          <p class="ms-documents-group__price">${price}</p>
+          <div class="ms-documents-group__title-price">
+            <p class="ms-documents-group__title">${title}</p>
+            <p class="ms-documents-group__price">${price}</p>
+          </div>
           <p class="ms-documents-group__hide">Скрыть</p>
           <p class="ms-documents-group__show">Смотреть ещё ${documents.length}</p>
           <div class="ms-documents-group__icon">
@@ -83,7 +87,7 @@ const getGroupTemplate = ( title, price, documents ) => {
             </svg>
           </div>
         </div>
-
+        <div class="ms-documents-group__header-underline"></div>
         <!-- Список документов для этой группы (здесь пока пуст, заполним отдельно) -->
         <div class="ms-document-group__documents-container"></div>
       </div>`
@@ -129,6 +133,15 @@ getDocumentsData( "documents.json" ).then( ( documents ) => {
         // Add listeners for our group
         const hideButton = groupElement.getElementsByClassName("ms-documents-group__hide")[0];
         const showButton = groupElement.getElementsByClassName("ms-documents-group__show")[0];
+        const arrowButton = groupElement.getElementsByClassName("ms-documents-group__icon")[0];
+
+        const toggleShowDocuments = () => {
+            if ( groupElement.classList.contains( DOCUMENTS_GROUP_OPENED_CLASS ) ) {
+                groupElement.classList.remove( DOCUMENTS_GROUP_OPENED_CLASS );
+            } else {
+                groupElement.classList.add( DOCUMENTS_GROUP_OPENED_CLASS );
+            }
+        }
 
         hideButton.addEventListener( "click", () => {
             groupElement.classList.remove( DOCUMENTS_GROUP_OPENED_CLASS );
@@ -136,6 +149,10 @@ getDocumentsData( "documents.json" ).then( ( documents ) => {
 
         showButton.addEventListener( "click", () => {
             groupElement.classList.add( DOCUMENTS_GROUP_OPENED_CLASS );
+        } );
+
+        arrowButton.addEventListener( "click", () => {
+            toggleShowDocuments();
         } );
     } );
 } );
