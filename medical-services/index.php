@@ -4,8 +4,8 @@ $APPLICATION->SetTitle("Юридическое сопровождение мед
 ?>
 
 <!-- DE -->
-<link rel="stylesheet" href="./reset.css?foo=baz2">
-<link rel="stylesheet" href="./index.css?foo=baz2">
+<link rel="stylesheet" href="./reset.css?foo=baz3">
+<link rel="stylesheet" href="./index.css?foo=baz3">
 
 <div class="ms-container">
   <article class="ms-top">

@@ -19,7 +19,7 @@ body {
 }
 
 .ms-top {
-    background-image: url("img/ms-top-bg.jpeg");
+    background-image: url("img/ms-top-bg-min.jpeg");
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -164,11 +164,11 @@ body {
 }
 
 #ms-licensing-info-1 .ms-licensing-info__image {
-    background-image: url("img/ms-licensing-1.jpeg");
+    background-image: url("img/ms-licensing-1-min.jpeg");
 }
 
 #ms-licensing-info-2 .ms-licensing-info__image {
-    background-image: url("img/ms-licensing-2.jpeg");
+    background-image: url("img/ms-licensing-2-min.jpeg");
 }
 .ms-licensing-info__description {
     max-width: 50%;
