@@ -312,10 +312,23 @@ body {
 .ms-document-group__document-title {
     width: 70%;
 }
-.ms-document-group__document-buy {
+.ms-document-group__document-add {
+    display: block;
     width: 8%;
     cursor: pointer;
     text-decoration: underline;
+}
+.ms-document-group__document-remove {
+    display: none;
+    width: 8%;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.ms-document-group__document_added .ms-document-group__document-add {
+    display: none;
+}
+.ms-document-group__document_added .ms-document-group__document-remove {
+    display: block;
 }
 .ms-document-group__document-price {
     width: 8%;
@@ -375,7 +388,10 @@ body {
     .ms-document-group__document-price {
         width: 10%;
     }
-    .ms-document-group__document-buy {
+    .ms-document-group__document-add {
+        width: 10%;
+    }
+    .ms-document-group__document-remove {
         width: 10%;
     }
 }
@@ -576,7 +592,11 @@ body {
         font-size: 12px;
         width: 15%;
     }
-    .ms-document-group__document-buy {
+    .ms-document-group__document-add {
+        font-size: 12px;
+        width: 15%;
+    }
+    .ms-document-group__document-remove {
         font-size: 12px;
         width: 15%;
     }

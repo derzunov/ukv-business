@@ -373,6 +373,6 @@ $APPLICATION->SetTitle("Юридическое сопровождение мед
   </div>
 </article>
 
-<script src="index.js?foo=baz"></script>
+<script src="main.js?foo=baz"></script>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -14,9 +14,10 @@ const licensingCommonBlock = document.getElementById("ms-licensing");
 const documentsBlock = document.getElementById("ms-documentation");
 
 // Class constants
-const ACTIVE_LICENSING_BUTTON_CLASS = "ms-licensing-button_active"
-const DOCUMENTS_GROUP_OPENED_CLASS = "ms-documents-group_opened"
-const HIDDEN_CLASS = "ms-g-hidden"
+const ACTIVE_LICENSING_BUTTON_CLASS = "ms-licensing-button_active";
+const DOCUMENTS_GROUP_OPENED_CLASS = "ms-documents-group_opened";
+const DOCUMENT_ADDED_CLASS = "ms-document-group__document_added";
+const HIDDEN_CLASS = "ms-g-hidden";
 
 // Functions
 const showPreLicensing = () => {
@@ -68,44 +69,6 @@ licensingButton_2.addEventListener("click", () => {
     window.location.hash = "#postlicensing";
 });
 
-// Documents ( from external source ) ----------------------------------------------------------------------------------
-
-const getGroupTemplate = ( title, price, documents ) => {
-    return `<div class="ms-documents-group">
-        <!-- Шапка группы документов -->
-        <div class="ms-documents-group__header">
-          <div class="ms-documents-group__title-price">
-            <p class="ms-documents-group__title">${title}</p>
-            <p class="ms-documents-group__price">${price}</p>
-          </div>
-          <p class="ms-documents-group__hide">Скрыть</p>
-          <p class="ms-documents-group__show">Смотреть ещё ${documents.length}</p>
-          <div class="ms-documents-group__icon">
-            <svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M36.6908 18.5C36.6908 28.1655 28.8602 36 19.2019 36C9.54353 36 1.71289 28.1655 1.71289 18.5C1.71289 8.83445 9.54353 1 19.2019 1C28.8602 1 36.6908 8.83445 36.6908 18.5Z" stroke="black" stroke-width="2"/>
-                <path d="M8.93066 14.3889L19.2023 23.6389L29.474 14.3889" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <div class="ms-documents-group__header-underline"></div>
-        <!-- Список документов для этой группы (здесь пока пуст, заполним отдельно) -->
-        <div class="ms-document-group__documents-container"></div>
-      </div>`
-}
-
-const getDocumentTemplate = ( { documentTitle, documentPrice } ) => {
-    return `<div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">${ documentTitle }</p>
-            <p class="ms-document-group__document-price">${ documentPrice }</p>
-            <p 
-              class="ms-document-group__document-buy"
-              data-document="${ { 
-                    documentTitle, 
-                    documentPrice 
-              } }"
-            >Купить</p>
-          </div>`
-}
 
 const getDocumentsData = async ( file ) => {
     let data = await fetch( file );
@@ -136,9 +99,17 @@ getDocumentsData( "documents.json" ).then( ( documents ) => {
 
             documentsContainer.appendChild( documentElement );
 
-            const documentBuyButton = documentElement.getElementsByClassName("ms-document-group__document-buy")[0];
-            documentBuyButton.addEventListener( "click", () => {
+            const documentAddToCardButton = documentElement.getElementsByClassName("ms-document-group__document-add")[0];
+            const documentRemoveFromCardButton = documentElement.getElementsByClassName("ms-document-group__document-remove")[0];
+
+            documentAddToCardButton.addEventListener( "click", () => {
+                toggleClass( documentElement, DOCUMENT_ADDED_CLASS );
                 addDocumentToCart( documentItem );
+                renderCart();
+            } );
+            documentRemoveFromCardButton.addEventListener( "click", () => {
+                toggleClass( documentElement, DOCUMENT_ADDED_CLASS );
+                removeDocumentFromCart( documentItem );
                 renderCart();
             } );
         } );
@@ -179,42 +150,21 @@ const createElementFromHTML = (htmlString) => {
     return div.firstChild;
 }
 
-// Cart functionality: -------------------------------------------------------------------------------------------------
-// TODO: Move the code below to a separate file
-const cart = {
-    customer: {
-        name: "Default name",
-        phone: "+7 999 111 22 33",
-        email: "user@email.com",
-    },
-    documents: [],
-};
-
-const addDocumentToCart = ( newDocument ) => {
-
-    // Document names are considered unique -------------------------------
-    // Add one type of document to the cart only once ---------------------
-    // Don't use the Set structure because of documents Set of objects mutability
-    let isAlreadyInCart = cart.documents.some( ( documentInCart ) => {
-        return newDocument.documentTitle === documentInCart.documentTitle;
-    } );
-
-    if ( !isAlreadyInCart ) {
-        cart.documents = [
-            ...cart.documents,
-            newDocument
-        ]
+const toggleClass = ( element, className ) => {
+    if ( element.classList.contains( className ) ) {
+        element.classList.remove( className );
+    } else {
+        element.classList.add( className );
     }
-    console.log(cart.documents[0]);
-    // / Add one type of document to the cart only once -------------------
 }
 
-const renderCart = () => {
-    const { documents } = cart;
-    console.log( "Document in the cart: -------------------------------" );
-    documents.forEach( ( { documentTitle, documentPrice } ) => {
-        console.log(`${ documentTitle } - ${ documentPrice }`);
-    } );
-    console.log( "-----------------------------------------------------" );
-    alert(documents.length);
+const addClass = ( element, className ) => {
+    if ( !element.classList.contains( className ) ) {
+        element.classList.add( className );
+    }
+}
+const removeClass = ( element, className ) => {
+    if ( element.classList.contains( className ) ) {
+        element.classList.remove( className );
+    }
 }

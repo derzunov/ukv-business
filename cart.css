@@ -1,0 +1,93 @@
+.ms-cart-container {
+    position: relative;
+}
+.ms-cart {
+    width: 500px;
+    height: fit-content;
+    max-height: 500px;
+    overflow: auto;
+    padding: 24px;
+
+    box-sizing:border-box;
+
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+
+    color: white;
+    background-color: #36A9E1;
+
+    font-size: 14px;
+
+    transform: translate( -140%, 0 );
+    transition: transform 0.4s ease-in;
+}
+.ms-cart.ms-cart_showed {
+    transform: translate( 0, 0 );
+}
+
+.ms-cart__checkout {
+    display: none;
+}
+
+.ms-cart_expanded .ms-cart__checkout {
+    display: block;
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ms-cart__toggle-expand {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ms-cart__header {
+    padding-bottom: 12px;
+    font-weight: bold;
+}
+
+.ms-cart__header {
+    padding-bottom: 12px;
+    font-weight: bold;
+}
+
+.ms-cart__documents-container {
+    display: none;
+    padding-top: 12px;
+}
+.ms-cart_expanded .ms-cart__documents-container {
+    display: block;
+}
+
+.ms-cart-document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 12px;
+}
+.ms-cart-document-item__title {
+    width: 70%;
+}
+.ms-cart-document-item__remove {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+
+}
+
+@media (max-width: 480px) {
+    .ms-cart {
+        width: auto;
+        left: 20px;
+        right: 20px;
+        font-size: 10px;
+    }
+    .ms-cart__header {
+        font-size: 10px;
+        padding-bottom: 15px;
+        font-weight: bold;
+    }
+}
