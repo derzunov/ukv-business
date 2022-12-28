@@ -19,12 +19,12 @@ body {
 }
 
 .ms-top {
-    background-image: url("img/ms-top-bg.jpeg");
+    background-image: url("img/ms-top-bg-min.jpeg");
     background-position: center;
     background-size: cover;
     width: 100%;
     height: fit-content;
-    padding: 117px 0 110px 0;
+    padding: 20px 0 20px 0;
     color: #ffffff;
     box-sizing: border-box;
 }
@@ -67,7 +67,7 @@ body {
     font-size: 28px;
     line-height: 34px;
     text-align: center;
-    padding: 54px 104px 104px 104px;
+    padding: 50px 100px;
 }
 .ms-kind-of-help {}
 .ms-kind-of-help__header {
@@ -158,18 +158,17 @@ body {
 
 .ms-licensing-info__image {
     width: 40%;
-    height: 52vw; /*40% * 1.3 (1.3 соотношение сторон картинки с макета)*/
 
     background-position: center;
     background-size: cover;
 }
 
 #ms-licensing-info-1 .ms-licensing-info__image {
-    background-image: url("img/ms-licensing-1.jpeg");
+    background-image: url("img/ms-licensing-1-min.jpeg");
 }
 
 #ms-licensing-info-2 .ms-licensing-info__image {
-    background-image: url("img/ms-licensing-2.jpeg");
+    background-image: url("img/ms-licensing-2-min.jpeg");
 }
 .ms-licensing-info__description {
     max-width: 50%;
@@ -242,8 +241,13 @@ body {
 
     padding: 17px 36px;
 }
-.ms-documents-group__title {
+.ms-documents-group__title-price {
+    display: flex;
     width: 60%;
+    align-items: center;
+}
+.ms-documents-group__title {
+    width: 80%;
     font-weight: bold;
 }
 .ms-documents-group__show {
@@ -255,6 +259,10 @@ body {
 
 .ms-documents-group__price {
     font-weight: bold;
+
+    width: 200px;
+    padding-left: 100px;
+;
 }
 .ms-documents-group_opened .ms-documents-group__show {
     display: none;
@@ -270,8 +278,15 @@ body {
     display: block;
 }
 
+.ms-documents-group_opened .ms-documents-group__header-underline {
+    border-bottom: 1px solid #000;
+    width: auto;
+    margin: 0 10px;
+}
+
 .ms-documents-group__icon {
     transition: transform ease-in .3s;
+    cursor: pointer;
 }
 .ms-documents-group_opened .ms-documents-group__icon {
     transform: rotate(180deg);
@@ -295,15 +310,32 @@ body {
 }
 
 .ms-document-group__document-title {
-    width: 80%;
+    width: 70%;
+}
+.ms-document-group__document-buy {
+    width: 8%;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.ms-document-group__document-price {
+    width: 8%;
 }
 
-.ms-document-group__document-price {
-    width: 6%;
+.ms-feedback {
+    margin: 32px auto;
+}
+
+.ms-feedback_licensing {
+    width: 100%;
+    margin: 20px 0 20px 0;
 }
 
 .ms-g-hidden {
- display: none;
+    display: none;
+}
+
+.ms-links {
+    padding-bottom: 40px;
 }
 
 /* Media Queries: */
@@ -321,15 +353,275 @@ body {
 }
 
 @media (max-width: 1024px) {
-    /*TODO: todo*/
+    .ms-licensing-button {
+        padding: 25px;
+        font-size: 24px;
+    }
+    .ms-licensing-button__header {
+
+    }
+    .ms-licensing-button__description {
+
+    }
+
+    .ms-documents-group__show, .ms-documents-group__hide {
+        font-size: 14px;
+    }
+
+    .ms-documents-group__price {
+        font-size: 14px;
+    }
+
+    .ms-document-group__document-price {
+        width: 10%;
+    }
+    .ms-document-group__document-buy {
+        width: 10%;
+    }
 }
 
-@media (max-width: 768px) {
-    /*TODO: todo*/
+@media (max-width: 900px) {
+    .ms-documentation-info {
+        display: block;
+        margin: 20px 0;
+    }
+    .ms-documentation-info__title {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
+    .ms-documentation-info__description {
+        padding: 20px 0;
+        width: 100%;
+        font-size: 14px;
+    }
 }
 
+@media (max-width: 820px) {
+    .ms-top {
+        padding: 0 0 20px 0;
+    }
+
+    .ms-top__header {
+        font-size: 24px;
+        padding: 40px;
+        margin: 0;
+    }
+
+    .ms-top-features {
+        padding: 0 0 0 40px;
+        display: block;
+        width: 100%;
+    }
+    .ms-top-feature {
+        display: flex;
+        margin: 0 0 30px 0;
+    }
+    .ms-top-feature__logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .ms-top-feature__logo svg {
+        width: 28px;
+        height: 28px;
+    }
+    .ms-top-feature__info {
+        padding: 0 0 0 40px;
+    }
+    .ms-top-feature__header {
+        padding: 0 0 10px 0;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .ms-top-feature__header br {
+        display: none;
+    }
+    .ms-top-feature__description {
+        padding: 0;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .ms-help-prologue__text {
+        font-size: 16px;
+        line-height: 18px;
+        padding: 40px 10px;
+    }
+
+    .ms-kind-of-help__columns {
+        display: block;
+    }
+    .ms-kind-of-help__column {
+        padding-left: 25px;
+        width: 100%;
+    }
+    .ms-list li {
+        font-size: 14px;
+    }
+
+    .ms-licensing {
+        margin-top: 50px;
+    }
+
+    .ms-licensing-info__description-list {
+        padding-left: 15px;
+    }
+
+    .ms-licensing-buttons {
+        padding: 0 10px;
+    }
+    .ms-licensing-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .ms-licensing-info {
+        margin-top: 15px;
+        padding: 0 10px;
+        display: block;
+    }
+
+    .ms-licensing-info.ms-g-hidden {
+        display: none;
+    }
+    .ms-licensing-info__image {
+        width: 100%;
+        height: 200px;
+    }
+    .ms-licensing-info__description {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 30px 0;
+    }
+    .ms-licensing-info__description-text {
+        font-size: 14px;
+    }
+    .ms-licensing-info__description-header {
+        font-size: 16px;
+        padding: 25px 0 10px 0
+    }
+
+    .ms-documentation {
+        margin: 0;
+        padding: 0 10px;
+    }
+    .ms-documentation-header {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .ms-documentation-info {
+        display: block;
+        margin: 20px 0;
+    }
+    .ms-documentation-info__title {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
+    .ms-documentation-info__description {
+        padding: 20px 0;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .ms-feedback_licensing {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .ms-licensing-button.ms-licensing-button_active {
+        border: solid 2px #0459A8;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .ms-documents-group__header {
+        padding: 10px;
+    }
+
+    .ms-documents-group__title-price {
+        display: block;
+        width: auto;
+    }
+    .ms-documents-group__title {
+        width: auto;
+
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .ms-documents-group__price {
+        padding: 10px 0 0 0;
+        font-size: 10px;
+    }
+    .ms-documents-group__show, .ms-documents-group__hide, .ms-documents-group__control {
+        display: none !important;
+    }
+    .ms-documents-group__icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .ms-document-group__documents-container {
+        padding: 20px 20px 20px 15px;
+    }
+    .ms-document-group__document-title {
+        font-size: 10px;
+    }
+    .ms-document-group__document-price {
+        font-size: 12px;
+        width: 15%;
+    }
+    .ms-document-group__document-buy {
+        font-size: 12px;
+        width: 15%;
+    }
+}
 @media (max-width: 480px) {
-    /*TODO: todo*/
+
 }
 
+/* Loader */
+.svg-loader {
+    display: flex;
+    position: relative;
+    align-content: space-around;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.loader-svg {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    fill: none;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke: rgba(0, 0, 0, 0.6);
+}
+.loader-svg.bg {
+    stroke-width: 8px;
+    stroke: rgba(0, 0, 0, 0.2);
+}
 
+.loader-animate {
+    stroke-dasharray: 242.6;
+    animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+}
+
+@keyframes fill-animation {
+    0%{
+        stroke-dasharray: 40 242.6;
+        stroke-dashoffset: 0;
+    }
+    50%{
+        stroke-dasharray: 141.3;
+        stroke-dashoffset: 141.3;
+    }
+    100%{
+        stroke-dasharray: 40 242.6;
+        stroke-dashoffset: 282.6;
+    }
+}

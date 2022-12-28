@@ -1,3 +1,5 @@
+console.log("ms-service");
+
 // Elements
 const licensingButton_1 = document.getElementById("ms-licensing-button-1");
 const licensingButton_2 = document.getElementById("ms-licensing-button-2");
@@ -72,8 +74,10 @@ const getGroupTemplate = ( title, price, documents ) => {
     return `<div class="ms-documents-group">
         <!-- Шапка группы документов -->
         <div class="ms-documents-group__header">
-          <p class="ms-documents-group__title">${title}</p>
-          <p class="ms-documents-group__price">${price}</p>
+          <div class="ms-documents-group__title-price">
+            <p class="ms-documents-group__title">${title}</p>
+            <p class="ms-documents-group__price">${price}</p>
+          </div>
           <p class="ms-documents-group__hide">Скрыть</p>
           <p class="ms-documents-group__show">Смотреть ещё ${documents.length}</p>
           <div class="ms-documents-group__icon">
@@ -83,7 +87,7 @@ const getGroupTemplate = ( title, price, documents ) => {
             </svg>
           </div>
         </div>
-
+        <div class="ms-documents-group__header-underline"></div>
         <!-- Список документов для этой группы (здесь пока пуст, заполним отдельно) -->
         <div class="ms-document-group__documents-container"></div>
       </div>`
@@ -93,6 +97,13 @@ const getDocumentTemplate = ( { documentTitle, documentPrice } ) => {
     return `<div class="ms-document-group__document">
             <p class="ms-document-group__document-title">${ documentTitle }</p>
             <p class="ms-document-group__document-price">${ documentPrice }</p>
+            <p 
+              class="ms-document-group__document-buy"
+              data-document="${ { 
+                    documentTitle, 
+                    documentPrice 
+              } }"
+            >Купить</p>
           </div>`
 }
 
@@ -119,16 +130,31 @@ getDocumentsData( "documents.json" ).then( ( documents ) => {
         // Now put our documents to group into documents container
         const documentsContainer = groupElement.getElementsByClassName("ms-document-group__documents-container")[0];
 
-        documents.forEach( ( document ) => {
-            const documentTemplate = getDocumentTemplate( document );
+        documents.forEach( ( documentItem ) => {
+            const documentTemplate = getDocumentTemplate( documentItem );
             const documentElement = createElementFromHTML( documentTemplate );
 
             documentsContainer.appendChild( documentElement );
-        });
+
+            const documentBuyButton = documentElement.getElementsByClassName("ms-document-group__document-buy")[0];
+            documentBuyButton.addEventListener( "click", () => {
+                addDocumentToCart( documentItem );
+                renderCart();
+            } );
+        } );
 
         // Add listeners for our group
         const hideButton = groupElement.getElementsByClassName("ms-documents-group__hide")[0];
         const showButton = groupElement.getElementsByClassName("ms-documents-group__show")[0];
+        const arrowButton = groupElement.getElementsByClassName("ms-documents-group__icon")[0];
+
+        const toggleShowDocuments = () => {
+            if ( groupElement.classList.contains( DOCUMENTS_GROUP_OPENED_CLASS ) ) {
+                groupElement.classList.remove( DOCUMENTS_GROUP_OPENED_CLASS );
+            } else {
+                groupElement.classList.add( DOCUMENTS_GROUP_OPENED_CLASS );
+            }
+        }
 
         hideButton.addEventListener( "click", () => {
             groupElement.classList.remove( DOCUMENTS_GROUP_OPENED_CLASS );
@@ -136,6 +162,10 @@ getDocumentsData( "documents.json" ).then( ( documents ) => {
 
         showButton.addEventListener( "click", () => {
             groupElement.classList.add( DOCUMENTS_GROUP_OPENED_CLASS );
+        } );
+
+        arrowButton.addEventListener( "click", () => {
+            toggleShowDocuments();
         } );
     } );
 } );
@@ -147,4 +177,44 @@ const createElementFromHTML = (htmlString) => {
 
     // Change this to div.childNodes to support multiple top-level nodes.
     return div.firstChild;
+}
+
+// Cart functionality: -------------------------------------------------------------------------------------------------
+// TODO: Move the code below to a separate file
+const cart = {
+    customer: {
+        name: "Default name",
+        phone: "+7 999 111 22 33",
+        email: "user@email.com",
+    },
+    documents: [],
+};
+
+const addDocumentToCart = ( newDocument ) => {
+
+    // Document names are considered unique -------------------------------
+    // Add one type of document to the cart only once ---------------------
+    // Don't use the Set structure because of documents Set of objects mutability
+    let isAlreadyInCart = cart.documents.some( ( documentInCart ) => {
+        return newDocument.documentTitle === documentInCart.documentTitle;
+    } );
+
+    if ( !isAlreadyInCart ) {
+        cart.documents = [
+            ...cart.documents,
+            newDocument
+        ]
+    }
+    console.log(cart.documents[0]);
+    // / Add one type of document to the cart only once -------------------
+}
+
+const renderCart = () => {
+    const { documents } = cart;
+    console.log( "Document in the cart: -------------------------------" );
+    documents.forEach( ( { documentTitle, documentPrice } ) => {
+        console.log(`${ documentTitle } - ${ documentPrice }`);
+    } );
+    console.log( "-----------------------------------------------------" );
+    alert(documents.length);
 }

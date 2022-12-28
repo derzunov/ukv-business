@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Юридическое сопровождение медицинской деятельности</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./index.css">
-</head>
-<body>
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Юридическое сопровождение медицинской деятельности");
+?>
+
+<!-- DE -->
+<link rel="stylesheet" href="./reset.css?foo=baz3">
+<link rel="stylesheet" href="./index.css?foo=baz3">
+
 <div class="ms-container">
   <article class="ms-top">
     <h2 class="ms-top__header">Юридическое<br>сопровождение<br>медицинской деятельности</h2>
@@ -76,6 +75,12 @@
     </p>
   </article>
 
+  <?$APPLICATION->IncludeFile(
+  SITE_DIR . "includes/template/footer.question.specialist.php",
+  [],
+  ["MODE" => "php"]
+  );?>
+
   <article class="ms-kind-of-help">
     <h3 class="ms-kind-of-help__header">Какую помощь мы предоставляем</h3>
     <div class="ms-kind-of-help__columns">
@@ -127,25 +132,24 @@
           </ul>
         </div>
       </div>
-<!--      <div class="ms-feedback_licensing">-->
-<!--        &lt;!&ndash; <script data-b24-form="inline/78/uem7cb" data-skip-moving="true">-->
-<!--            (function (w, d, u) {-->
-<!--                var s = d.createElement('script');-->
-<!--                s.async = true;-->
-<!--                s.src = u + '?' + (Date.now() / 180000 | 0);-->
-<!--                var h = d.getElementsByTagName('script')[0];-->
-<!--                h.parentNode.insertBefore(s, h);-->
-<!--            })(window, document, 'https://cdn-ru.bitrix24.ru/b13415736/crm/form/loader_78.js');-->
-<!--        </script> &ndash;&gt;-->
-<!--        <?$APPLICATION->IncludeFile(-->
-<!--        SITE_DIR . "includes/template/footer.question.specialist.php",-->
-<!--        [],-->
-<!--        ["MODE" => "php"]-->
-<!--        );?>-->
-<!--      </div>-->
+      <div class="ms-feedback_licensing">
+        <!-- <script data-b24-form="inline/78/uem7cb" data-skip-moving="true">
+            (function (w, d, u) {
+                var s = d.createElement('script');
+                s.async = true;
+                s.src = u + '?' + (Date.now() / 180000 | 0);
+                var h = d.getElementsByTagName('script')[0];
+                h.parentNode.insertBefore(s, h);
+            })(window, document, 'https://cdn-ru.bitrix24.ru/b13415736/crm/form/loader_78.js');
+        </script> -->
+        <?$APPLICATION->IncludeFile(
+        SITE_DIR . "includes/template/footer.question.specialist.php",
+        [],
+        ["MODE" => "php"]
+        );?>
+      </div>
 
     </div>
-
     <!--   Licensing info block #2    -->
     <div class="ms-licensing-info ms-g-hidden" id="ms-licensing-info-2">
       <div class="ms-licensing-info__image"></div>
@@ -162,106 +166,213 @@
           </ul>
         </div>
       </div>
-<!--      <div class="ms-feedback_licensing">-->
-<!--        &lt;!&ndash; <script data-b24-form="inline/78/uem7cb" data-skip-moving="true">-->
-<!--            (function (w, d, u) {-->
-<!--                var s = d.createElement('script');-->
-<!--                s.async = true;-->
-<!--                s.src = u + '?' + (Date.now() / 180000 | 0);-->
-<!--                var h = d.getElementsByTagName('script')[0];-->
-<!--                h.parentNode.insertBefore(s, h);-->
-<!--            })(window, document, 'https://cdn-ru.bitrix24.ru/b13415736/crm/form/loader_78.js');-->
-<!--        </script> &ndash;&gt;-->
-<!--        <?$APPLICATION->IncludeFile(-->
-<!--        SITE_DIR . "includes/template/footer.question.specialist.php",-->
-<!--        [],-->
-<!--        ["MODE" => "php"]-->
-<!--        );?>-->
-<!--      </div>-->
-    </div>
-  </article>
-  <article class="ms-documentation" id="ms-documentation">
-    <h3 class="ms-documentation-header">
-      Документация<br>для ведения медицинской деятельности
-    </h3>
-
-    <div class="ms-documentation-info">
-      <p class="ms-documentation-info__title">Индивидуальные пакеты документов</p>
-      <p class="ms-documentation-info__description">
-        Грамотное ведение документации необходимо для успешного прохождения проверок. Регламентировать нужно всё от оформления сотрудников в штат до получения отзывов пациентов. «ЮКВ-Бизнес» избавит от волокиты и разработает все необходимые документы для вашего медицинского центра:
-      </p>
-    </div>
-
-    <!-- Контейнер пакетов документов -->
-    <div class="ms-documents" id="ms-documents">
-
-      <!-- Одна конкретная группа документов -->
-      <div class="ms-documents-group">
-
-        <div class="ms-documents-group__header">
-          <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>
-          <p class="ms-documents-group__price">25 000</p>
-          <p class="ms-documents-group__control">скрыть</p>
-          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>
-            <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          </div>
-        </div>
-
-        <!-- Список документов для этой группы -->
-        <div class="ms-document-group__documents-container">
-
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>
-            <p class="ms-document-group__document-price">15 000</p>
-          </div>
-
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>
-            <p class="ms-document-group__document-price">3 000</p>
-          </div>
-
-        </div>
+      <div class="ms-feedback_licensing">
+        <!-- <script data-b24-form="inline/78/uem7cb" data-skip-moving="true">
+            (function (w, d, u) {
+                var s = d.createElement('script');
+                s.async = true;
+                s.src = u + '?' + (Date.now() / 180000 | 0);
+                var h = d.getElementsByTagName('script')[0];
+                h.parentNode.insertBefore(s, h);
+            })(window, document, 'https://cdn-ru.bitrix24.ru/b13415736/crm/form/loader_78.js');
+        </script> -->
+        <?$APPLICATION->IncludeFile(
+        SITE_DIR . "includes/template/footer.question.specialist.php",
+        [],
+        ["MODE" => "php"]
+        );?>
       </div>
-
-      <!-- Один конкретный тип документов -->
-      <div class="ms-documents-group">
-
-        <div class="ms-documents-group__header">
-          <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>
-          <p class="ms-documents-group__price">25 000</p>
-          <p class="ms-documents-group__control">скрыть</p>
-          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>
-            <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          </div>
-        </div>
-
-        <!-- Список документов для этого типа -->
-        <div class="ms-document-group__documents-container">
-
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>
-            <p class="ms-document-group__document-price">15 000</p>
-          </div>
-
-          <!-- Конкретный элемент документов -->
-          <div class="ms-document-group__document">
-            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>
-            <p class="ms-document-group__document-price">3 000</p>
-          </div>
-
-        </div>
-      </div>
-
     </div>
   </article>
 </div>
-<script src="index.js"></script>
-</body>
-</html>
+
+<article class="ms-documentation" id="ms-documentation">
+  <h3 class="ms-documentation-header">
+    Документация<br>для ведения медицинской деятельности
+  </h3>
+
+  <div class="ms-documentation-info">
+    <p class="ms-documentation-info__title">Индивидуальные пакеты документов</p>
+    <p class="ms-documentation-info__description">
+      Грамотное ведение документации необходимо для успешного прохождения проверок. Регламентировать нужно всё от оформления сотрудников в штат до получения отзывов пациентов. «ЮКВ-Бизнес» избавит от волокиты и разработает все необходимые документы для вашего медицинского центра:
+    </p>
+  </div>
+
+  <!-- Контейнер пакетов документов -->
+  <div class="ms-documents" id="ms-documents">
+
+    <div class="svg-loader">
+      <svg class="svg-container" height="70" width="70" viewBox="0 0 100 100">
+        <circle class="loader-svg bg" cx="50" cy="50" r="45"></circle>
+        <circle class="loader-svg loader-animate" cx="50" cy="50" r="45"></circle>
+      </svg>
+    </div>
+
+    <!--      &lt;!&ndash; Одна конкретная группа документов &ndash;&gt;-->
+    <!--      <div class="ms-documents-group">-->
+
+    <!--        <div class="ms-documents-group__header">-->
+
+    <!--          <div class="ms-documents-group__title-price">-->
+    <!--            <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>-->
+    <!--            <p class="ms-documents-group__price">25 000</p>-->
+    <!--          </div>-->
+
+    <!--          <p class="ms-documents-group__control">скрыть</p>-->
+    <!--          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--            <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>-->
+    <!--            <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>-->
+    <!--          </svg>-->
+    <!--          </div>-->
+    <!--        </div>-->
+
+    <!--        &lt;!&ndash; Список документов для этой группы &ndash;&gt;-->
+    <!--        <div class="ms-document-group__documents-container">-->
+
+    <!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+    <!--          <div class="ms-document-group__document">-->
+    <!--            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>-->
+    <!--            <p class="ms-document-group__document-price">15 000</p>-->
+    <!--          </div>-->
+
+    <!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+    <!--          <div class="ms-document-group__document">-->
+    <!--            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>-->
+    <!--            <p class="ms-document-group__document-price">3 000</p>-->
+    <!--          </div>-->
+
+    <!--        </div>-->
+    <!--      </div>-->
+
+    <!--      &lt;!&ndash; Один конкретный тип документов &ndash;&gt;-->
+    <!--      <div class="ms-documents-group">-->
+
+    <!--        <div class="ms-documents-group__header">-->
+    <!--          <p class="ms-documents-group__title">Документы для оформления трудовых отношений и предотвращения материального ущерба (увод клиентов, убытки)</p>-->
+    <!--          <p class="ms-documents-group__price">25 000</p>-->
+    <!--          <p class="ms-documents-group__control">скрыть</p>-->
+    <!--          <div class="ms-documents-group__icon"><svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--              <path d="M1.71348 18.5C1.71348 8.83445 9.54412 1 19.2024 1C28.8608 1 36.6914 8.83445 36.6914 18.5C36.6914 28.1655 28.8608 36 19.2024 36C9.54412 36 1.71348 28.1655 1.71348 18.5Z" stroke="black" stroke-width="2"/>-->
+    <!--              <path d="M29.4736 22.6111L19.202 13.3611L8.93034 22.6111" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>-->
+    <!--            </svg>-->
+    <!--          </div>-->
+    <!--          <div class="ms-documents-group__header-underline"></div>-->
+    <!--        </div>-->
+
+    <!--        &lt;!&ndash; Список документов для этого типа &ndash;&gt;-->
+    <!--        <div class="ms-document-group__documents-container">-->
+
+    <!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+    <!--          <div class="ms-document-group__document">-->
+    <!--            <p class="ms-document-group__document-title">Комплекты кадровой документации (положения, приказы, формы, планы, распоряжения, бланки — более 50 видов)</p>-->
+    <!--            <p class="ms-document-group__document-price">15 000</p>-->
+    <!--          </div>-->
+
+    <!--          &lt;!&ndash; Конкретный элемент документов &ndash;&gt;-->
+    <!--          <div class="ms-document-group__document">-->
+    <!--            <p class="ms-document-group__document-title">Трудовые договоры с приложениями</p>-->
+    <!--            <p class="ms-document-group__document-price">3 000</p>-->
+    <!--          </div>-->
+
+    <!--        </div>-->
+    <!--      </div>-->
+
+  </div>
+</article>
+<article class="ms-how-we-work">
+  <div class="what_job what_job_w">
+    <div class="ti">Как мы работаем</div>
+    <ul class="what_job__list">
+      <li>
+        <div class="what_job__list_inner">
+          <div class="what_job__list_ico">
+            <img src="/upload/uf/49e/49e74c2e9bae5e25db6be4794589f62c.svg" alt="icon">
+          </div>
+          <div class="what_job__list_text">
+            <span>Подача заявки на сайте или по телефону</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="what_job__list_inner">
+          <div class="what_job__list_ico">
+            <img src="/upload/uf/e6a/e6a59e0cf8cb0ce30a918eb9a88c5683.svg" alt="icon">
+          </div>
+          <div class="what_job__list_text">
+            <span>Консультация и расчет стоимости</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="what_job__list_inner">
+          <div class="what_job__list_ico">
+            <img src="/upload/uf/b82/b828ef00a23a6dd9e449606feb46c16b.svg" alt="icon">
+          </div>
+          <div class="what_job__list_text">
+            <span>Подписание договора</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="what_job__list_inner">
+          <div class="what_job__list_ico">
+            <img src="/upload/uf/46c/46cce84efa832cb5e53a7383642ee9f7.svg" alt="icon">
+          </div>
+          <div class="what_job__list_text">
+            <span>Подача в ЮКВБизнес документов</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="what_job__list_inner">
+          <div class="what_job__list_ico">
+            <img src="/upload/uf/0ad/0ad28d1ba91127f2b114997ca96e1e26.svg" alt="icon">
+          </div>
+          <div class="what_job__list_text">
+            <span>Получение запрашиваемого документа</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</article>
+<article class="ms-links">
+  <div class="licens_dop_registration">
+    <ul class="licens_dop_registration__list">
+      <li>
+        <a class="npl_block_blue btn_str_hover_main" href="https://chelyabinsk.ukv-business.ru/licensing/litsenzirovanie-meditsinskoy-deyatelnosti/">
+          <div class="npl_block_blue__name">
+            Лицензирование медицинской деятельности
+          </div>
+          <div class="btn_str npl_block_blue__btn">
+            <span>Подробнее</span><i></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="npl_block_blue btn_str_hover_main" href="https://chelyabinsk.ukv-business.ru/licensing/litsenzirovanie-stomatologicheskikh-uslug/">
+          <div class="npl_block_blue__name">
+            Лицензирование стоматологических услуг
+          </div>
+          <div class="btn_str npl_block_blue__btn">
+            <span>Подробнее</span><i></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="npl_block_blue btn_str_hover_main" href="https://chelyabinsk.ukv-business.ru/licensing/litsenziya-na-kosmetologiyu/">
+          <div class="npl_block_blue__name">
+            Лицензия на косметологию
+          </div>
+          <div class="btn_str npl_block_blue__btn">
+            <span>Подробнее</span><i></i>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</article>
+
+<script src="index.js?foo=baz"></script>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
